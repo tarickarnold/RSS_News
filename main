@@ -1,0 +1,70 @@
+import feedparser
+import feedsearch
+from datetime import datetime
+from datetime import datetime, timedelta
+
+def fetch_rss_link(links):
+    """Locate the RSS or ATOM feed based on base url"""
+    for link in links:
+        feeds = feedsearch.search(link)
+        urls = [f.url for f in feeds]
+        return urls
+
+def fetch_rss_data(urls):
+    """Collect recent articles found on RSS or ATOM link"""
+    # Get current year and current month
+    current_year = datetime.now().year
+    current_month = datetime.now().month
+
+    # Encode list of Feed/ATOM URLs
+    urls_str = ','.join(urls)
+    urls_str.encode('UTF-8')
+
+    # Locate the article details by current month and current year
+    feed = feedparser.parse(urls_str)
+    print("Feed Title:", feed.feed.title)
+    for entry in feed.entries:
+        date = entry.published_parsed
+        if date.tm_year == current_year and date.tm_current == current_month:
+            print("Entry Title:", entry.title)
+            print("Entry Author:", entry.author)
+            print("Entry Link:", entry.link)
+            print("Entry Published Date:", entry.published)
+            print("Entry Summary:", entry.summary)
+            print("\n")
+
+
+# List of RSS feed URLs
+links = ["404media.co",
+         "hackernoon.com",
+         "theverge.com",
+         "thecyberwire.com",
+         "thehackernews.com",
+         "darkreading.com",
+         "hackercombat.com",
+         "tomriha.com",
+         "lifehacker.com",
+         "wired.com",
+         "mashable.com",
+         "techcrunch.com",
+         "9to5mac.com",
+         "droid-life.com",
+         "thenextweb.com",
+         "macworld.com",
+         "petapixel.com",
+         "geektyrant.com",
+         "npr.org",
+         "nerdist.com",
+         "vox.com",
+         "themarginalian.org",
+         "fstoppers.com",
+         "aljazeera.com",
+         "inc.com",
+         "businessinsider.com"
+]
+
+if __name__ == "__main__":
+    # Run functions
+    for link in links:
+        urls = list(fetch_rss_link(links))
+        fetch_rss_data(urls)
