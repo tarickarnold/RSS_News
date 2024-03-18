@@ -1,5 +1,6 @@
 import feedparser
 import feedsearch
+from pandas import *
 from datetime import datetime
 from datetime import datetime, timedelta
 
@@ -33,35 +34,10 @@ def fetch_rss_data(urls):
             print("Entry Summary:", entry.summary)
             print("\n")
 
-
 # List of RSS feed URLs
-links = ["404media.co",
-         "hackernoon.com",
-         "theverge.com",
-         "thecyberwire.com",
-         "thehackernews.com",
-         "darkreading.com",
-         "hackercombat.com",
-         "tomriha.com",
-         "lifehacker.com",
-         "wired.com",
-         "mashable.com",
-         "techcrunch.com",
-         "9to5mac.com",
-         "droid-life.com",
-         "thenextweb.com",
-         "macworld.com",
-         "petapixel.com",
-         "geektyrant.com",
-         "npr.org",
-         "nerdist.com",
-         "vox.com",
-         "themarginalian.org",
-         "fstoppers.com",
-         "aljazeera.com",
-         "inc.com",
-         "businessinsider.com"
-]
+data = read_csv("News_List.csv")
+links = data['News List'].tolist()         
+print(links)
 
 if __name__ == "__main__":
     # Run functions
