@@ -34,13 +34,23 @@ def fetch_rss_data(urls):
             print("Entry Summary:", entry.summary)
             print("\n")
 
-# List of RSS feed URLs
-data = read_csv("News_List.csv")
-links = data['News List'].tolist()         
-print(links)
+def main():
+    
+    # List of RSS feed URLs
+    data = read_csv("News_List.csv", dtype=str)
+    links = data['News List'].tolist()         
+    print(links)
+
+# Run functions
+    for link in links:
+        urls = fetch_rss_link(links)
+        fetch_rss_data(urls)
 
 if __name__ == "__main__":
-    # Run functions
-    for link in links:
-        urls = list(fetch_rss_link(links))
-        fetch_rss_data(urls)
+    main()
+
+    
+
+# feeds = feedsearch.search('nytimes.com')
+# urls = [f.url for f in feeds]
+# print(urls)
