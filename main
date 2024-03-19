@@ -48,9 +48,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-    
-
-# feeds = feedsearch.search('nytimes.com')
-# urls = [f.url for f in feeds]
-# print(urls)
