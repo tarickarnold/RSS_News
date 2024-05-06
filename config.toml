@@ -1,0 +1,29 @@
+[websites]
+feeds = [
+    "hackernoon.com",
+    "theverge.com",
+    "thecyberwire.com",
+    "thehackernews.com",
+    "darkreading.com",
+    "hackercombat.com",
+    "tomriha.com",
+    "lifehacker.com",
+    "wired.com",
+    "mashable.com",
+    "techcrunch.com"
+    "9to5mac.com",
+    "droid-life.com",
+    "thenextweb.com",
+    "macworld.com",
+    "petapixel.com",
+    "geektyrant.com",
+    "npr.org",
+    "nerdist.com",
+    "vox.com",
+    "themarginalian.org",
+    "fstoppers.com",
+    "aljazeera.com",
+    "inc.com",
+    "businessinsider.com",
+    "404media.co"
+]
