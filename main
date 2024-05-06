@@ -1,7 +1,5 @@
 import feedparser
 import feedsearch
-import re
-import toml
 from pandas import *
 from datetime import datetime
 from datetime import datetime, timedelta
@@ -38,10 +36,9 @@ def fetch_rss_data(urls)-> None:
 
 def main()-> None:
     
-    with open(file='pyproject.toml', mode='r') as f:
-        config = toml.load(f)
-
-    links = config['websites']['feeds']
+    # List of RSS feed URLs
+    data = read_csv("News_List.csv", dtype=str)
+    links = data['News List'].tolist()         
     print(links)
 
 # Run functions
