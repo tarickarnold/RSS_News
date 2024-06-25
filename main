@@ -1,16 +1,19 @@
 import feedparser
 import feedsearch
-import toml
 from datetime import datetime
+from config import Config
+from logger import
+
 
 def fetch_rss_link(links) -> list[str]:
     """Locate the RSS or ATOM feed based on base url"""
+    urls: list[str] = []
     for link in links:
-        feeds: list[str] = feedsearch.search(link)
-        urls: list[str] = [f.url for f in feeds]
-        return urls
+        feed: str = feedsearch.search(url=link)      
+        urls.append(feed)
+        print(urls)
 
-def fetch_rss_data(urls)-> None:
+def fetch_rss_data(urls) -> list[str]:
     """Collect recent articles found on RSS or ATOM link"""
     # Get current year and current month
     current_year: int = datetime.now().year
@@ -18,13 +21,13 @@ def fetch_rss_data(urls)-> None:
 
     # Encode list of Feed/ATOM URLs
     urls_str: str = ','.join(urls)
-    urls_str.encode(encoding ='UTF-8')
+    new_urls_str = urls_str.encode(encoding ='UTF-8')
 
     # Locate the article details by current month and current year
-    feed = feedparser.parse(urls_str)
+    feed = feedparser.parse(url_file_stream_or_string=new_urls_str)
     print("Feed Title:", feed.feed.title)
     for entry in feed.entries:
-        date = entry.published_parsed
+        date: datetime = entry.published_parsed
         if date.tm_year == current_year and date.tm_mon == current_month:
             print("Entry Title:", entry.title)
             print("Entry Author:", entry.author)
@@ -33,18 +36,10 @@ def fetch_rss_data(urls)-> None:
             print("Entry Summary:", entry.summary)
             print("\n")
 
-def main():
-    
-    with open('config.toml', 'r') as f:
-        config = toml.load(f)
-
-    links = config['websites']['feeds']
-    print(links)
-
-# Run functions
-    for link in links:
-        urls = fetch_rss_link(links)
-        fetch_rss_data(urls)
+def main() -> None:
+    config = Config(target_file='config.toml')
+    links = config.rsslist
+    fetch_rss_link(links)
 
 if __name__ == "__main__":
     main()
