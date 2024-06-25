@@ -1,5 +1,11 @@
-[websites]
-feeds = [
+[bot]
+name = "RSS_News"
+environment = "dev"
+email = "arnoldt2009@gmail.com"
+
+[bot.urls]
+websites = [
+    "realpython.com",
     "hackernoon.com",
     "theverge.com",
     "thecyberwire.com",
@@ -10,7 +16,7 @@ feeds = [
     "lifehacker.com",
     "wired.com",
     "mashable.com",
-    "techcrunch.com"
+    "techcrunch.com",
     "9to5mac.com",
     "droid-life.com",
     "thenextweb.com",
@@ -27,3 +33,14 @@ feeds = [
     "businessinsider.com",
     "404media.co"
 ]
+
+[server]
+host = ""
+port = ""
+ssl = ""
+
+[database]
+url = ""
+name = ""
+username = ""
+passsword = ""
