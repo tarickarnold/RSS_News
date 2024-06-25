@@ -1,7 +1,8 @@
 import feedparser
 import feedsearch
 from datetime import datetime
-from datetime import datetime, timedelta
+from logger import setup_logging
+from config import Config
 
 def fetch_rss_link(links) -> list[str]:
     """Locate the RSS or ATOM feed based on base url"""
