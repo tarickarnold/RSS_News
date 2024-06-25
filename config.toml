@@ -33,14 +33,3 @@ websites = [
     "businessinsider.com",
     "404media.co"
 ]
-
-[server]
-host = ""
-port = ""
-ssl = ""
-
-[database]
-url = ""
-name = ""
-username = ""
-passsword = ""
