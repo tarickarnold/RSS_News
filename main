@@ -2,7 +2,7 @@ import feedparser
 import feedsearch
 from datetime import datetime
 from config import Config
-from logger import
+from logger import setup_logging
 
 
 def fetch_rss_link(links) -> list[str]:

@@ -3,6 +3,7 @@ import toml
 import logging.config
 import logging.handlers
 import os
+from config import Config
 
 logger = logging.getLogger(name= __name__)
 
