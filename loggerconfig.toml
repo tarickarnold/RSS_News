@@ -18,8 +18,8 @@ stream = "ext://sys.stderr"
 class = "logging.handlers.RotatingFileHandler"
 level = "DEBUG"
 formatter = "detailed"
-filename = "RSS_News.log"
-maxBytes = 10_000
+filename = "logs/my_app.log"
+maxBytes = 100_000
 backupCount = 3
 
 [loggers.root]
