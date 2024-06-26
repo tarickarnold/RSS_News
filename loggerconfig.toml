@@ -1,4 +1,3 @@
-[loggers]
 version = 1
 disable_existing_loggers = false
 
@@ -19,8 +18,8 @@ stream = "ext://sys.stderr"
 class = "logging.handlers.RotatingFileHandler"
 level = "DEBUG"
 formatter = "detailed"
-filename = "logs/my_app.log"
-maxBytes = 100_000
+filename = "RSS_News.log"
+maxBytes = 10_000
 backupCount = 3
 
 [loggers.root]
