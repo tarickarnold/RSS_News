@@ -11,8 +11,8 @@ def fetch_rss_link(links) -> None:
     for link in links:
         feed: str = feedsearch.search(link)   
         urls.append(feed)
-        print(urls)
-        feedSearch_logger.info('creating an instance of Auxiliary')
+        
+    feedSearch_logger.info(f"Found {urls}")
 
 def main():
     dir_name: str = os.path.dirname(p=__file__)
