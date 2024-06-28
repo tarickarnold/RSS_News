@@ -1,0 +1,33 @@
+[INFO|log|L16] 2024-06-27T22:16:30-0500: Logger has begun
+[INFO|main|L11] 2024-06-27T22:16:30-0500: RSS_News has begun running
+[INFO|config|L33] 2024-06-27T22:16:31-0500: Config file found and loaded.
+[INFO|config|L24] 2024-06-27T22:16:31-0500: Instantiated Config Class
+[INFO|main|L13] 2024-06-27T22:16:31-0500: Completed config
+[INFO|feedsearch|L124] 2024-06-27T22:16:31-0500: Finding feeds at URL: https://realpython.com
+[INFO|lib|L175] 2024-06-27T22:16:31-0500: Fetching URL: https://realpython.com
+[DEBUG|connectionpool|L1052] 2024-06-27T22:16:31-0500: Starting new HTTPS connection (1): realpython.com:443
+[DEBUG|connectionpool|L546] 2024-06-27T22:16:31-0500: https://realpython.com:443 "GET / HTTP/1.1" 200 None
+[DEBUG|lib|L188] 2024-06-27T22:16:31-0500: Performed fetch of URL: https://realpython.com in 692ms
+[DEBUG|feedsearch|L150] 2024-06-27T22:16:31-0500: Searched url in 702ms
+[DEBUG|feedsearch|L179] 2024-06-27T22:16:31-0500: Looking for <link> tags.
+[INFO|lib|L175] 2024-06-27T22:16:31-0500: Fetching URL: https://realpython.com/atom.xml
+[DEBUG|connectionpool|L546] 2024-06-27T22:16:31-0500: https://realpython.com:443 "GET /atom.xml HTTP/1.1" 200 38066
+[DEBUG|lib|L188] 2024-06-27T22:16:31-0500: Performed fetch of URL: https://realpython.com/atom.xml in 47ms
+[INFO|feedsearch|L183] 2024-06-27T22:16:31-0500: Found 1 feed <link> tags.
+[DEBUG|feedsearch|L186] 2024-06-27T22:16:31-0500: Searched <link> tags in 870ms
+[INFO|feedsearch|L309] 2024-06-27T22:16:31-0500: Returning sorted URLs: [FeedInfo(<method-wrapper '__repr__' of str object at 0x00000233253DBDC0>)]
+[DEBUG|lib|L244] 2024-06-27T22:16:31-0500: Function name=_find_feeds duration=873ms
+[INFO|feedsearch|L124] 2024-06-27T22:16:31-0500: Finding feeds at URL: https://hackernoon.com
+[INFO|lib|L175] 2024-06-27T22:16:31-0500: Fetching URL: https://hackernoon.com
+[DEBUG|connectionpool|L1052] 2024-06-27T22:16:31-0500: Starting new HTTPS connection (1): hackernoon.com:443
+[DEBUG|connectionpool|L546] 2024-06-27T22:16:32-0500: https://hackernoon.com:443 "GET / HTTP/1.1" 200 None
+[DEBUG|lib|L188] 2024-06-27T22:16:32-0500: Performed fetch of URL: https://hackernoon.com in 562ms
+[DEBUG|feedsearch|L150] 2024-06-27T22:16:32-0500: Searched url in 579ms
+[DEBUG|feedsearch|L179] 2024-06-27T22:16:32-0500: Looking for <link> tags.
+[INFO|feedsearch|L183] 2024-06-27T22:16:32-0500: Found 0 feed <link> tags.
+[DEBUG|feedsearch|L186] 2024-06-27T22:16:32-0500: Searched <link> tags in 813ms
+[DEBUG|site_meta|L39] 2024-06-27T22:16:32-0500: Domain https://hackernoon.com is different from URL https://hackernoon.com. Fetching domain.
+[INFO|lib|L175] 2024-06-27T22:16:32-0500: Fetching URL: https://hackernoon.com
+[DEBUG|connectionpool|L546] 2024-06-27T22:16:32-0500: https://hackernoon.com:443 "GET / HTTP/1.1" 200 None
+[DEBUG|lib|L188] 2024-06-27T22:16:32-0500: Performed fetch of URL: https://hackernoon.com in 79ms
+[DEBUG|feedsearch|L196] 2024-06-27T22:16:33-0500: Looking for CMS feeds.

@@ -3,16 +3,16 @@ import os
 import feedsearch
 from config import Config
 
-feedSearch_logger = logging.getLogger(__name__) 
+search_logger = logging.getLogger(__name__) 
 
 def fetch_rss_link(links) -> None:
     """Locate the RSS or ATOM feed based on base url"""
     urls: list[str] = []
     for link in links:
-        feed: str = feedsearch.search(link)   
+        link = str(link)
+        feed: str = feedsearch.search(link)
         urls.append(feed)
-        
-    feedSearch_logger.info(f"Found {urls}")
+        search_logger.info(f"Found {urls}")
 
 def main():
     dir_name: str = os.path.dirname(p=__file__)

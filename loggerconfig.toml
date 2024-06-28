@@ -18,7 +18,7 @@ stream = "ext://sys.stderr"
 class = "logging.handlers.RotatingFileHandler"
 level = "DEBUG"
 formatter = "detailed"
-filename = "logs/my_app.log"
+filename = "app.log"
 maxBytes = 100_000
 backupCount = 3
 
