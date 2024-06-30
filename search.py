@@ -26,10 +26,12 @@ def fetch_rss_links(links)-> list:
                     else:
                         urls.append(href)
                         search_logger.info(f"Found url: {href}")
-        except: AttributeError
-        search_logger.exception(f"Href did not find a url")
+        except AttributeError as e:
+            search_logger.exception(f"{e}")
 
     return urls
+
+#TODO Add function to clean up list of functional urls
 
 def main():
     dir_name: str = os.path.dirname(p=__file__)

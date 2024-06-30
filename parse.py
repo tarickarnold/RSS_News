@@ -14,7 +14,6 @@ def fetch_rss_data(urls):
     for url in urls:
         feed = feedparser.parse(url)
         if len (feed) > 0:
-            parser_logger.info(f"RSS {url} parsed")
             try:
                 for entry in feed.entries:
                     date = entry.published_parsed
@@ -25,9 +24,11 @@ def fetch_rss_data(urls):
                         print("Entry Published Date:", entry.published)
                         print("Entry Summary:", entry.summary)
                         print("\n")
-                        parser_logger.info(f"Article contents extracted. title:{entry.title} published date {entry.publshed}")
-            except: AttributeError
-            parser_logger.exception(f"Nothing found at {url}")
+                        parser_logger.info(f"Article contents extracted. {entry.link}")
+            except AttributeError as e:
+                parser_logger.exception(f"Nothing found at {e} url: {url}")
+
+
 def main():
     url = "https://www.theverge.com/rss/index.xml"
     fetch_rss_data(url)
